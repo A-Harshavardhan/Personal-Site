@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+$roboto : "Roboto";
+
+$softpink : #F9A8D4;
+$lightpeach : #FFAB91;
+$brightcyan : #00B2FF;
+$deepblue : #0033FF;
+
+// Bootstrap color
+$deeppurple : #6D28D9;
+
+$darkslateblue : #2C3E50;
+
+$coral : #FF6F61;
+
+$steelblue : #4682B4;
+
+$darkcharcoal : #1F2937;
+
+$breakpoints : (
+    'sm' : 576px,
+    'md' : 768px,
+    'lg' : 992px
+);
+
+// Breakpoints
+@mixin media-up($key) {
+    $breakpoint : map-get($breakpoints, $key);
+
+    @if $breakpoint {
+        @media (min-width : $breakpoint) {
+            @content;
+        }
+    }
+    @else {
+        @warn ("Breakpoint '#{$key}' not found in breakpoints map.");
+    }
+}

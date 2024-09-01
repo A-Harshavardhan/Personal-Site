@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+
+</head>
+
+<body>
+
+    <!-- Navigation bar -->
+    <header id="header">
+        <!-- Navigation for Desktop -->
+        <nav class="nav-desktop">
+            <div class="logo">
+                <div class="image">
+                    <img src="images/harsha-icon.jpg" alt="Logo">
+                    <p>Portfolio</p>
+                </div>
+            </div>
+            <div class="navbars">
+                <a href="#home">Home</a>
+                <a href="#profile">Profile</a>
+                <a href="#skills">Skills</a>
+                <a href="#">Projects</a>
+            </div>
+            <div class="contact-btn">
+                <a href="">Contact me</a>
+            </div>
+        </nav>
+
+        <!-- Navigation for Mobile -->
+        <nav class="nav-mobile">
+            <div class="logo">
+                <div class="image">
+                    <img src="images/harsha-icon.jpg" alt="Logo">
+                    <p>Portfolio</p>
+                </div>
+                <div class="list-icon">
+                    <button><i class="bi bi-list"></i></button>
+                </div>
+            </div>
+            <div class="fixed-nav">
+                <div class="close-icon">
+                    <i class="bi bi-x-lg"></i>
+                </div>
+                <div class="navbars">
+                    <a href="#home" class="nav-links">Home</a>
+                    <a href="#profile" class="nav-links">Profile</a>
+                    <a href="#skills" class="nav-links">Skills</a>
+                    <a href="#" class="nav-links">Projects</a>
+                </div>
+                <div class="contact-btn">
+                    <a href="#">Contact me</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Home section -->
+    <section id="home">
+        <div class="outer">
+            <div class="inner-1">
+                <img src="images/Harsha-home.jpg" alt="Harsha image">
+            </div>
+            <div class="inner-2">
+                <div class="home-info">
+                    <h1>Welcome to my site</h1>
+                    <p class="name">Harsha</p>
+                    <p class="role-name"># Web designer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profile section -->
+    <section id="profile">
+        <div class="outer">
+            <div class="inner-1">
+                <h2>About Me</h2>
+                <hr class="hr-1">
+                <hr class="hr-2">
+                <p>I'm <span>A Harshavardhan</span>, hailing from Nagari, Andhra Pradesh.
+                    Currently, I work as an <span>SFCC Developer</span> at <span>Cloud
+                        Odyssey</span>, where I leverage my skills as a full-stack developer. I
+                    hold a B.Tech degree in Electronics and Communication Engineering (ECE),
+                    which has provided me with a solid foundation in both technical and
+                    problem-solving aspects. Passionate about technology and innovation, I enjoy
+                    tackling complex challenges and contributing to dynamic projects.
+                </p>
+                <div class="chat-btn">
+                    <button>Let's Chat <i class="bi bi-chat-dots"></i></button>
+                </div>
+            </div>
+            <div class="inner-2">
+                <div class="profile-image">
+                    <img src="images/Harsha-about.jpg" alt="Profile">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills section -->
+    <section id="skills">
+        <h2>Skills section</h2>
+        <hr class="hr-1">
+        <hr class="hr-2">
+        <div class="outer">
+            <div class="inner">
+                <img src="images/html.jpg" alt="Html-logo">
+            </div>
+            <div class="inner">
+                <img src="images/css.jpg" alt="css-logo">
+            </div>
+            <div class="inner">
+                <img src="images/javascript.jpg" alt="javascript-logo">
+            </div>
+            <div class="inner">
+                <img src="images/java.png" alt="java-logo">
+            </div>
+            <div class="inner">
+                <img src="images/python.jpg" alt="python-logo">
+            </div>
+            <div class="inner">
+                <img src="images/react.png" alt="react-logo">
+            </div>
+            <div class="inner">
+                <img src="images/django.jpg" alt="django-logo">
+            </div>
+            <div class="inner">
+                <img src="images/sql.png" alt="sql-logo">
+            </div>
+            <div class="inner">
+                <img src="images/dsa.jpg" alt="dsa-logo">
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools section -->
+    <section id="tools">
+        <h2>Tools section</h2>
+        <hr class="hr-1">
+        <hr class="hr-2">
+        <div class="outer">
+            <div class="inner">
+                <img src="images/vs-code.png" alt="vscode-logo">
+            </div>
+            <div class="inner">
+                <img src="images/eclipse.jpg" alt="eclipse-logo">
+            </div>
+            <div class="inner">
+                <img src="images/git-logo.jpg" alt="git-logo">
+            </div>
+        </div>
+    </section>
+
+    <section id="lets-chat">
+        <!-- <div class="close-btn">
+        </div> -->
+        <div class="outer">
+            <div class="close-btn">
+                <p>Let's Chat</p>
+                <i class="bi bi-x close-chat"></i>
+            </div>
+            <input type="email" placeholder="Enter email">
+            <textarea name="message" id="message" placeholder="Enter message"></textarea>
+            <div class="send-btn">
+                <button>send <i class="bi bi-send"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to top button -->
+    <section id="backToTop" class="active">
+        <button><i class="bi bi-arrow-up-short"></i></button>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <!-- JQuery code for navigation toggler -->
+    <script>
+        $(document).ready(function () {
+            $('.list-icon').on('click', function () {
+                $('.fixed-nav').toggleClass('active');
+                $('.nav-links').toggleClass('active');
+            });
+            $('.nav-links').on('click', function () {
+                $('.fixed-nav').toggleClass('active');
+            });
+            $('.close-icon').on('click', function () {
+                $('.fixed-nav').toggleClass('active');
+            });
+            $('.chat-btn').on('click', function () {
+                $('#lets-chat').toggleClass('active');
+            });
+            $('.close-chat').on('click', function () {
+                $('#lets-chat').toggleClass('active');
+            });
+        });
+    </script>
+
+    <!-- Javascript code for background-color to navigation after scrolling -->
+    <script>
+        window.addEventListener('scroll', function () {
+            let selector1 = document.getElementById('header');
+            let selector2 = document.getElementById('backToTop');
+
+            if (window.scrollY > 100) {
+                selector1.classList.add('active');
+                selector2.classList.add('active');
+            }
+            else {
+                selector1.classList.remove('active');
+                selector2.classList.remove('active');
+            }
+        });
+
+        document.getElementById('backToTop').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        })
+    </script>
+
+
+</body>
+
+</html>
