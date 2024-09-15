@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -9,28 +10,37 @@ html {
   scroll-behavior: smooth;
 }
 
-#header {
-  transition: 0.2s ease-in-out;
+.navigation-bar {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
-  height: 50px;
-  z-index: 999999;
-  animation: test2 0.4s ease-in-out forwards;
+  padding: 7px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  animation: moveTop 0.3s forwards;
+  z-index: 99999;
 }
-@keyframes test2 {
+@media (min-width: 768px) {
+  .navigation-bar {
+    padding: 10px 25px;
+  }
+}
+@keyframes moveTop {
   from {
     top: 10px;
   }
   to {
-    top: 0;
+    top: 0px;
   }
 }
-#header.active {
+.navigation-bar.active {
   background-color: #2C3E50;
-  animation: test 0.4s ease-in-out forwards;
+  animation: getBc 0.4s ease-in-out;
 }
-@keyframes test {
+@keyframes getBc {
   from {
     top: -50px;
   }
@@ -38,179 +48,163 @@ html {
     top: 0;
   }
 }
-#header.active .nav-desktop .logo .image p {
+.navigation-bar.active .site-logo p {
   color: #fff;
-}
-#header.active .nav-desktop .navbars a {
-  color: white;
-}
-#header.active .nav-mobile .logo .image p {
-  color: #fff;
-}
-#header .nav-desktop {
-  display: none;
 }
 @media (min-width: 768px) {
-  #header .nav-desktop {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 10px 0;
+  .navigation-bar.active .nav-links {
+    background-color: #2C3E50;
+    transition: 0s ease;
+  }
+  .navigation-bar.active .nav-links .links .nav-link a {
+    color: #fff;
+  }
+  .navigation-bar.active .nav-links .contactme-btn button {
+    background-color: #fff;
+  }
+  .navigation-bar.active .nav-links .contactme-btn button a {
+    color: #2C3E50;
   }
 }
-#header .nav-desktop .logo .image {
+.navigation-bar.active .navbar-toggler-icon button {
+  background-color: #fff;
+}
+.navigation-bar.active .navbar-toggler-icon button .bi::before {
+  color: #2C3E50;
+}
+.navigation-bar .site-logo {
   display: flex;
   align-items: center;
 }
-#header .nav-desktop .logo .image img {
-  width: 29px;
-  height: 29px;
-  -o-object-fit: fill;
-     object-fit: fill;
+.navigation-bar .site-logo img {
+  width: 33px;
+  height: 33px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
-#header .nav-desktop .logo .image p {
-  color: #00796B;
-  font-family: "Roboto";
-  margin-left: 8px;
-  font-size: 16px;
-  letter-spacing: 2px;
+.navigation-bar .site-logo p {
+  color: #2C3E50;
+  font-size: 22px;
+  text-transform: uppercase;
+  font-family: "Protest Guerrilla";
+  letter-spacing: 1.3px;
 }
-#header .nav-desktop .navbars a {
-  padding: 10px;
-  font-size: 15px;
-  letter-spacing: 1.8px;
-  font-family: "Roboto";
-  color: black;
-  text-decoration: none;
-  font-weight: 500;
-  transition: 0.2s ease-in-out;
+.navigation-bar .nav-links {
+  position: fixed;
+  top: 47px;
+  left: -100%;
+  width: 75%;
+  height: 97vh;
+  padding-top: 30px;
+  background-color: #2C3E50;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  z-index: 99999;
+  opacity: 0;
+  transition: 0.4s ease-in-out;
 }
-#header .nav-desktop .navbars a:hover {
-  color: #00796B;
-}
-#header .nav-desktop .contact-btn a {
-  padding: 8px 9px;
-  background-color: #00796B;
-  border: 1px solid #00796B;
-  color: #fff;
-  font-family: "Roboto";
-  font-size: 15px;
-  text-decoration: none;
-  letter-spacing: 0.9px;
-  font-weight: 400;
-  transition: 0.3s ease-in-out;
-}
-#header .nav-desktop .contact-btn a:hover {
-  background-color: #fff;
-  color: #00796B;
-}
-#header .nav-mobile {
-  display: block;
+.navigation-bar .nav-links.active {
+  left: 0;
+  opacity: 1;
 }
 @media (min-width: 768px) {
-  #header .nav-mobile {
+  .navigation-bar .nav-links {
+    position: static;
+    flex-direction: row;
+    height: auto;
+    padding: 0;
+    justify-content: space-between;
+    background-color: #fff;
+    transition: 0s;
+    opacity: 1;
+  }
+}
+.navigation-bar .nav-links .nav-close-icon {
+  width: 100%;
+  padding-right: 30px;
+  text-align: end;
+  z-index: 9999;
+}
+@media (min-width: 768px) {
+  .navigation-bar .nav-links .nav-close-icon {
     display: none;
   }
 }
-#header .nav-mobile .logo {
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  padding: 6px 20px;
-}
-#header .nav-mobile .logo .image {
-  display: flex;
-  align-items: center;
-}
-#header .nav-mobile .logo .image img {
-  width: 29px;
-  height: 29px;
-  -o-object-fit: fill;
-     object-fit: fill;
-}
-#header .nav-mobile .logo .image p {
-  color: #00796B;
-  font-family: "Roboto";
-  margin-left: 8px;
-  font-size: 19px;
-  letter-spacing: 2.9px;
-  font-weight: bold;
-}
-#header .nav-mobile .logo .list-icon button {
+.navigation-bar .nav-links .nav-close-icon button {
   border: none;
+  outline: none;
   background-color: #fff;
+  cursor: pointer;
 }
-#header .nav-mobile .logo .list-icon button .bi::before {
-  color: #00796B;
-  font-size: 27px;
-  font-weight: bolder;
+.navigation-bar .nav-links .nav-close-icon button .bi::before {
+  font-size: 24px;
 }
-#header .nav-mobile .fixed-nav {
-  position: fixed;
-  left: -100%;
-  top: 50px;
-  width: 70%;
-  height: 93vh;
-  background-color: #fff;
-  box-shadow: 0 0 10px #00796B;
+.navigation-bar .nav-links .links {
   display: flex;
   flex-direction: column;
+  height: 65%;
   justify-content: space-evenly;
-  transition: left 0.4s ease-in-out;
-}
-@media (min-width: 576px) {
-  #header .nav-mobile .fixed-nav {
-    width: 40%;
-  }
-}
-#header .nav-mobile .fixed-nav.active {
-  left: 0;
-}
-#header .nav-mobile .fixed-nav .close-icon {
-  text-align: end;
-  padding-right: 20px;
-}
-#header .nav-mobile .fixed-nav .close-icon .bi::before {
-  font-size: 20px;
-  color: #00796B;
-}
-#header .nav-mobile .fixed-nav .navbars {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 50%;
-  padding: 20px 0px;
-  justify-content: space-around;
-  align-items: center;
-}
-#header .nav-mobile .fixed-nav .navbars a {
-  color: #00796B;
-  font-family: "Roboto";
-  text-decoration: none;
-  font-size: 20px;
-  letter-spacing: 2px;
-}
-#header .nav-mobile .fixed-nav .contact-btn {
-  margin: 40px auto 0;
-}
-#header .nav-mobile .fixed-nav .contact-btn a {
-  padding: 8px 9px;
-  background-color: #00796B;
-  border: 1px solid #00796B;
-  color: #fff;
-  font-family: "Roboto";
-  font-size: 15px;
-  text-decoration: none;
-  letter-spacing: 0.9px;
-  font-weight: 400;
-  display: inline;
 }
 @media (min-width: 768px) {
-  #header .nav-mobile .fixed-nav .contact-btn a {
-    font-size: 20px;
+  .navigation-bar .nav-links .links {
+    flex-direction: row;
+    width: 80%;
+    justify-content: space-evenly;
+    height: auto;
+  }
+}
+.navigation-bar .nav-links .links .nav-link a {
+  font-size: 16px;
+  color: #fff;
+  letter-spacing: 0.4px;
+  text-decoration: none;
+  font-family: "Roboto";
+  letter-spacing: 1.2px;
+  font-weight: bolder;
+}
+@media (min-width: 768px) {
+  .navigation-bar .nav-links .links .nav-link a {
+    color: #2C3E50;
+  }
+}
+.navigation-bar .nav-links .contactme-btn button {
+  padding: 7px;
+  border: none;
+  outline: none;
+  background-color: #fff;
+}
+.navigation-bar .nav-links .contactme-btn button a {
+  font-size: 17px;
+  font-family: "Roboto";
+  color: #2C3E50;
+  cursor: pointer;
+  text-decoration: none;
+}
+@media (min-width: 768px) {
+  .navigation-bar .nav-links .contactme-btn button a {
+    color: #fff;
+  }
+}
+@media (min-width: 768px) {
+  .navigation-bar .nav-links .contactme-btn button {
+    background-color: #2C3E50;
+  }
+}
+.navigation-bar .navbar-toggler-icon button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: #2C3E50;
+  padding: 3px;
+}
+.navigation-bar .navbar-toggler-icon button .bi::before {
+  font-size: 24px;
+  color: #fff;
+}
+@media (min-width: 768px) {
+  .navigation-bar .navbar-toggler-icon {
+    display: none;
   }
 }
 
@@ -236,7 +230,7 @@ html {
 #home .outer .inner-1 img {
   margin: 0 auto;
   width: 90%;
-  height: 350px;
+  height: 410px;
   -o-object-fit: fill;
      object-fit: fill;
 }
