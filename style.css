@@ -442,7 +442,7 @@ html {
 }
 #profile .outer .inner-2 .profile-image img {
   width: 79%;
-  height: 79%;
+  height: 90%;
   -o-object-fit: fill;
      object-fit: fill;
   border-radius: 30px;
