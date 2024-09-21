@@ -50,7 +50,7 @@
                 <div class="home-info">
                     <h1>Welcome to my site</h1>
                     <p class="name">Harsha</p>
-                    <p class="role-name"># Web designer</p>
+                    <p class="role-name"># <span id="roleName">Web designer</span></p>
                 </div>
             </div>
         </div>
@@ -91,30 +91,52 @@
         <div class="outer">
             <div class="inner">
                 <img src="images/html.jpg" alt="Html-logo">
+                <p>HTML</p>
             </div>
             <div class="inner">
                 <img src="images/css.jpg" alt="css-logo">
+                <p>CSS</p>
             </div>
             <div class="inner">
                 <img src="images/javascript.jpg" alt="javascript-logo">
+                <p>JavaScript</p>
             </div>
             <div class="inner">
                 <img src="images/java.png" alt="java-logo">
+                <p>JAVA</p>
             </div>
             <div class="inner">
                 <img src="images/python.jpg" alt="python-logo">
+                <p>PYTHON</p>
             </div>
             <div class="inner">
                 <img src="images/react.png" alt="react-logo">
+                <p>REACT</p>
             </div>
             <div class="inner">
                 <img src="images/django.jpg" alt="django-logo">
+                <p>DJANGO</p>
             </div>
             <div class="inner">
                 <img src="images/sql.png" alt="sql-logo">
+                <p>SQL</p>
             </div>
             <div class="inner">
                 <img src="images/dsa.jpg" alt="dsa-logo">
+                <p>DSA</p>
+            </div>
+            <div class="inner">
+                <img src="images/jquery.jpg" alt="jQuery-logo">
+                <p>JQUERY</p>
+            </div>
+            <div class="inner">
+                <img src="images/sass.jpg" alt="sass-logo">
+                <p>SASS</p>
+
+            </div>
+            <div class="inner">
+                <img src="images/sfcc.png" alt="sfcc-logo">
+                <p>SFCC</p>
             </div>
         </div>
     </section>
@@ -127,12 +149,15 @@
         <div class="outer">
             <div class="inner">
                 <img src="images/vs-code.png" alt="vscode-logo">
+                <p>VS CODE</p>
             </div>
             <div class="inner">
                 <img src="images/eclipse.jpg" alt="eclipse-logo">
+                <p>ECLIPSE</p>
             </div>
             <div class="inner">
                 <img src="images/git-logo.jpg" alt="git-logo">
+                <p>GITHUB</p>
             </div>
         </div>
     </section>
@@ -163,13 +188,13 @@
     <!-- JQuery code for navigation toggler -->
     <script>
         $(document).ready(function () {
-            $('.navbar-toggler-icon').on('click', function() {
+            $('.navbar-toggler-icon').on('click', function () {
                 $('.nav-links').toggleClass('active');
             });
-            $('.nav-close-icon button').on('click', function() {
+            $('.nav-close-icon button').on('click', function () {
                 $('.nav-links').toggleClass('active');
             });
-            $('.nav-link').on('click', function() {
+            $('.nav-link').on('click', function () {
                 $('.nav-links').toggleClass('active');
             });
             $('.chat-btn').on('click', function () {
@@ -199,7 +224,47 @@
 
         document.getElementById('backToTop').addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
-        })
+        });
+    </script>
+
+    <!-- Revealing role names one by one -->
+    <script>
+        var roleName = document.getElementById('roleName');
+        roleName.innerText = '';
+
+        var roleNames = ['Web Designer', 'SFCC Developer', 'Frontend Developer'];
+
+        var textIndex = 0;
+        var charIndex = 0;
+        var typing = true;
+
+        function typeRoleNames() {
+            if (typing) {
+                if (charIndex < roleNames[textIndex].length) {
+                    roleName.innerText += roleNames[textIndex].charAt(charIndex);
+                    charIndex++;
+                    setTimeout(typeRoleNames, 150);
+                } else {
+                    typing = false;
+                    setTimeout(typeRoleNames, 1000);
+                }
+            } else {
+                if (charIndex > 0) {
+                    roleName.innerText = roleNames[textIndex].substring(0, charIndex - 1);
+                    charIndex--;
+                    setTimeout(typeRoleNames, 50);
+                } else {
+                    typing = true;
+                    textIndex = (textIndex + 1) % roleNames.length;
+                    charIndex = 0; // Reset charIndex for the new role
+                    setTimeout(typeRoleNames, 1000);
+                }
+            }
+        }
+
+        typeRoleNames();
+
+
     </script>
 
 
