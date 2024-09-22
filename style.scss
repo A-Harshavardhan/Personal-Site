@@ -277,6 +277,12 @@ html {
             flex-basis: 100%;
             display: flex;
             justify-content: center;
+            opacity: 0;
+            transition: all .9s ease-in-out;
+
+            &.active {
+                opacity: 1;
+            }
 
             @include media-up(md) {
                 flex-basis: 50%;
@@ -404,6 +410,14 @@ html {
         .inner-1 {
             flex-basis: 100%;
             padding: 40px;
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: all .8s ease;
+
+            &.active {
+                opacity: 1;
+                transform: translateX(0px);
+            }
 
             @include media-up(md) {
                 flex-basis: 60%;
@@ -484,6 +498,14 @@ html {
 
         .inner-2 {
             display: none;
+            opacity: 0;
+            transform: translatey(-30px);
+            transition: all .8s ease;
+
+            &.active {
+                opacity: 1;
+                transform: translatey(0);
+            }
 
             @include media-up(md) {
                 display: block;
@@ -511,7 +533,7 @@ html {
 
 #skills,
 #tools {
-    padding: 45px 0;
+    padding: 55px 0;
 
     @include media-up(md) {
         padding: 65px 0 0;
@@ -552,6 +574,11 @@ html {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        row-gap: 15px;
+
+        @include media-up(md) {
+            row-gap: 0;
+        }
 
         .inner {
             flex-basis: 50%;
@@ -559,6 +586,14 @@ html {
             padding: 8px;
             position: relative;
             height: 140px;
+            opacity: 0;
+            transform: translateY(-30px);
+            transition: all .8s ease-in-out;
+
+            &.active {
+                opacity: 1;
+                transform: translateY(0);
+            }
 
             &:hover {
                 img {
@@ -746,3 +781,4 @@ html {
         }
     }
 }
+

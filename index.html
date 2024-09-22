@@ -185,6 +185,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
+
     <!-- JQuery code for navigation toggler -->
     <script>
         $(document).ready(function () {
@@ -265,6 +266,33 @@
         typeRoleNames();
 
 
+    </script>
+
+    <script>
+        var homeInner1 = document.querySelector('#home .outer .inner-1');
+        var profileInner1 = document.querySelector('#profile .outer .inner-1');
+        var profileInner2 = document.querySelector('#profile .outer .inner-2');
+        var skillsInner = document.querySelectorAll('.outer .inner');
+
+        var observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, {
+            threshold : .9
+        });
+
+        observer.observe(homeInner1);
+        observer.observe(profileInner1);
+        observer.observe(profileInner2);
+        skillsInner.forEach(ele => {
+            observer.observe(ele);
+        });
+        skillsInner.forEach(ele => {
+            observer.observe(ele);
+        });
     </script>
 
 

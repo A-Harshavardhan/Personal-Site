@@ -234,6 +234,11 @@ html {
   flex-basis: 100%;
   display: flex;
   justify-content: center;
+  opacity: 0;
+  transition: all 0.9s ease-in-out;
+}
+#home .outer .inner-1.active {
+  opacity: 1;
 }
 @media (min-width: 768px) {
   #home .outer .inner-1 {
@@ -358,6 +363,13 @@ html {
 #profile .outer .inner-1 {
   flex-basis: 100%;
   padding: 40px;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.8s ease;
+}
+#profile .outer .inner-1.active {
+  opacity: 1;
+  transform: translateX(0px);
 }
 @media (min-width: 768px) {
   #profile .outer .inner-1 {
@@ -433,6 +445,13 @@ html {
 }
 #profile .outer .inner-2 {
   display: none;
+  opacity: 0;
+  transform: translatey(-30px);
+  transition: all 0.8s ease;
+}
+#profile .outer .inner-2.active {
+  opacity: 1;
+  transform: translatey(0);
 }
 @media (min-width: 768px) {
   #profile .outer .inner-2 {
@@ -458,7 +477,7 @@ html {
 
 #skills,
 #tools {
-  padding: 45px 0;
+  padding: 55px 0;
 }
 @media (min-width: 768px) {
   #skills,
@@ -506,6 +525,13 @@ html {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  row-gap: 15px;
+}
+@media (min-width: 768px) {
+  #skills .outer,
+  #tools .outer {
+    row-gap: 0;
+  }
 }
 #skills .outer .inner,
 #tools .outer .inner {
@@ -514,6 +540,14 @@ html {
   padding: 8px;
   position: relative;
   height: 140px;
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: all 0.8s ease-in-out;
+}
+#skills .outer .inner.active,
+#tools .outer .inner.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 #skills .outer .inner:hover img,
 #tools .outer .inner:hover img {
