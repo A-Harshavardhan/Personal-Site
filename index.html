@@ -83,9 +83,30 @@
         </div>
     </section>
 
+    <!-- Let's chat button in Profile section -->
+    <section id="letsChat">
+        <!-- <div class="close-btn">
+        </div> -->
+        <div class="outer">
+            <div class="close-btn">
+                <p>Let's Chat</p>
+                <i class="bi bi-x close-chat"></i>
+            </div>
+            <input type="email" placeholder="Enter email" id="emailField">
+            <textarea name="message" id="message" placeholder="Enter message"></textarea>
+            <div class="send-btn">
+                <button onclick="popupMessage()">send <i class="bi bi-send"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section id="popup">
+        <p class="popup-message"></p>
+    </section>
+
     <!-- Skills section -->
     <section id="skills">
-        <h2>Skills section</h2>
+        <h2>Skills</h2>
         <hr class="hr-1">
         <hr class="hr-2">
         <div class="outer">
@@ -143,7 +164,7 @@
 
     <!-- Tools section -->
     <section id="tools">
-        <h2>Tools section</h2>
+        <h2>Tools</h2>
         <hr class="hr-1">
         <hr class="hr-2">
         <div class="outer">
@@ -162,18 +183,14 @@
         </div>
     </section>
 
-    <section id="lets-chat">
-        <!-- <div class="close-btn">
-        </div> -->
-        <div class="outer">
-            <div class="close-btn">
-                <p>Let's Chat</p>
-                <i class="bi bi-x close-chat"></i>
+    <section id="projects">
+        <div class="project">
+            <div class="project-img">
+                <img src="" alt="">
             </div>
-            <input type="email" placeholder="Enter email">
-            <textarea name="message" id="message" placeholder="Enter message"></textarea>
-            <div class="send-btn">
-                <button>send <i class="bi bi-send"></i></button>
+            <div class="project-info">
+                <h3 class="project-name"></h3>
+                <h3 class="project-desp"></h3>
             </div>
         </div>
     </section>
@@ -186,7 +203,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
 
-    <!-- JQuery code for navigation toggler -->
+    <!-- JQuery code for navigation toggler and lets chat button -->
     <script>
         $(document).ready(function () {
             $('.navbar-toggler-icon').on('click', function () {
@@ -199,10 +216,10 @@
                 $('.nav-links').toggleClass('active');
             });
             $('.chat-btn').on('click', function () {
-                $('#lets-chat').toggleClass('active');
+                $('#letsChat').toggleClass('active');
             });
             $('.close-chat').on('click', function () {
-                $('#lets-chat').toggleClass('active');
+                $('#letsChat').toggleClass('active');
             });
         });
     </script>
@@ -268,6 +285,7 @@
 
     </script>
 
+    <!-- Intersection observer functionality -->
     <script>
         var homeInner1 = document.querySelector('#home .outer .inner-1');
         var profileInner1 = document.querySelector('#profile .outer .inner-1');
@@ -276,12 +294,12 @@
 
         var observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if(entry.isIntersecting) {
+                if (entry.isIntersecting) {
                     entry.target.classList.add('active');
                 }
             });
         }, {
-            threshold : .9
+            threshold: .9
         });
 
         observer.observe(homeInner1);
@@ -293,6 +311,37 @@
         skillsInner.forEach(ele => {
             observer.observe(ele);
         });
+    </script>
+
+    <!-- Let's chat pop up message -->
+    <script>
+        function popupMessage() {
+            var email = document.getElementById('emailField');
+            var popUpMessage = document.querySelector('.popup-message');
+
+
+            if (email.value.trim() != '') {
+                popUpMessage.innerText = `Thank you for contacting me ${email.value}. I will get back to u.`;
+
+                popUpMessage.classList.add('success');
+
+                setTimeout(() => {
+                    popUpMessage.classList.remove('success');
+                }, 3000);
+                email.value = '';
+                document.getElementById('letsChat').classList.remove('active');
+
+            }
+            else {
+                popUpMessage.innerText = 'Please enter valid Email Address!';
+
+                popUpMessage.classList.add('error');
+
+                setTimeout(() => {
+                    popUpMessage.classList.remove('error');
+                }, 3000);
+            }
+        }
     </script>
 
 

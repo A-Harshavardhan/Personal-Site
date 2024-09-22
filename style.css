@@ -380,7 +380,7 @@ html {
   text-align: center;
   margin-bottom: 0;
   color: #00796B;
-  font-size: 25px;
+  font-size: 35px;
   font-family: "Roboto";
   letter-spacing: 2px;
 }
@@ -490,7 +490,7 @@ html {
   text-align: center;
   margin-bottom: 0;
   color: #00796B;
-  font-size: 25px;
+  font-size: 35px;
   font-family: "Roboto";
   letter-spacing: 2px;
 }
@@ -625,7 +625,7 @@ html {
   color: #00796B;
 }
 
-#lets-chat {
+#letsChat {
   position: fixed;
   bottom: 65px;
   width: 250px;
@@ -633,47 +633,48 @@ html {
   background-color: #00796B;
   opacity: 0;
   transition: 0.6s ease-in-out;
+  z-index: 99;
 }
 @media (min-width: 768px) {
-  #lets-chat {
+  #letsChat {
     width: 300px;
   }
 }
-#lets-chat.active {
+#letsChat.active {
   opacity: 1;
   right: 15px;
 }
-#lets-chat .outer {
+#letsChat .outer {
   padding: 20px;
 }
-#lets-chat .outer .close-btn {
+#letsChat .outer .close-btn {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 25px;
 }
-#lets-chat .outer .close-btn p {
+#letsChat .outer .close-btn p {
   color: #fff;
   text-align: center;
   font-size: 20px;
   font-family: "Roboto";
   letter-spacing: 2px;
 }
-#lets-chat .outer .close-btn .bi {
+#letsChat .outer .close-btn .bi {
   cursor: pointer;
   transition: 0.2s ease-in-out;
 }
-#lets-chat .outer .close-btn .bi::before {
+#letsChat .outer .close-btn .bi::before {
   font-size: 20px;
   color: #fff;
   border: 1px solid #fff;
 }
-#lets-chat .outer .close-btn .bi:hover::before {
+#letsChat .outer .close-btn .bi:hover::before {
   color: #00796B;
   background-color: #fff;
   border: 1px solid #fff;
 }
-#lets-chat .outer input {
+#letsChat .outer input {
   display: block;
   padding: 5px;
   height: 30px;
@@ -683,7 +684,7 @@ html {
   width: 100%;
   font-family: monospace;
 }
-#lets-chat .outer textarea {
+#letsChat .outer textarea {
   padding: 5px;
   height: 120px;
   outline: none;
@@ -691,11 +692,11 @@ html {
   margin-bottom: 10px;
   width: 100%;
 }
-#lets-chat .outer .send-btn {
+#letsChat .outer .send-btn {
   text-align: center;
   margin-top: 5px;
 }
-#lets-chat .outer .send-btn button {
+#letsChat .outer .send-btn button {
   padding: 6px 18px;
   background-color: #fff;
   color: #00796B;
@@ -707,8 +708,58 @@ html {
   border: 1px solid #00796B;
   transition: 0.3s ease-in-out;
 }
-#lets-chat .outer .send-btn button:hover {
+#letsChat .outer .send-btn button:hover {
   background-color: #00796B;
   border: 1px solid #fff;
   color: #fff;
+}
+
+#popup .popup-message {
+  width: 85%;
+  margin: 0 auto;
+  position: fixed;
+  top: 100px;
+  left: -100%;
+  padding: 10px;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+  font-family: "Roboto";
+  font-size: 18px;
+  letter-spacing: 0.4px;
+  text-align: center;
+  z-index: 99;
+}
+#popup .popup-message .email {
+  color: #2C3E50;
+  font-size: 20px;
+}
+#popup .popup-message.success {
+  left: 30px;
+  opacity: 1;
+  background-color: #d4edda;
+}
+@media (min-width: 768px) {
+  #popup .popup-message.success {
+    left: 50px;
+  }
+}
+@media (min-width: 992px) {
+  #popup .popup-message.success {
+    left: 90px;
+  }
+}
+#popup .popup-message.error {
+  left: 30px;
+  opacity: 1;
+  background-color: #f8d7da;
+}
+@media (min-width: 768px) {
+  #popup .popup-message.error {
+    left: 50px;
+  }
+}
+@media (min-width: 992px) {
+  #popup .popup-message.error {
+    left: 90px;
+  }
 }/*# sourceMappingURL=style.css.map */
