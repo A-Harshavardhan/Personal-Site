@@ -247,20 +247,20 @@ html {
 }
 #home .outer .inner-1 img {
   margin: 0 auto;
-  width: 90%;
+  width: 100%;
   height: 410px;
   -o-object-fit: fill;
      object-fit: fill;
 }
 @media (min-width: 576px) {
   #home .outer .inner-1 img {
-    width: 60%;
+    width: 80%;
     height: 490px;
   }
 }
 @media (min-width: 768px) {
   #home .outer .inner-1 img {
-    width: 80%;
+    width: 100%;
     height: 590px;
   }
 }
@@ -362,7 +362,7 @@ html {
 }
 #profile .outer .inner-1 {
   flex-basis: 100%;
-  padding: 40px;
+  padding: 40px 15px;
   opacity: 0;
   transform: translateX(-10px);
   transition: all 0.8s ease;
@@ -374,6 +374,7 @@ html {
 @media (min-width: 768px) {
   #profile .outer .inner-1 {
     flex-basis: 60%;
+    padding: 40px;
   }
 }
 #profile .outer .inner-1 h2 {
@@ -521,7 +522,7 @@ html {
 #skills .outer,
 #tools .outer {
   width: 100%;
-  padding: 0 40px;
+  padding: 0 10px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -531,6 +532,7 @@ html {
   #skills .outer,
   #tools .outer {
     row-gap: 0;
+    padding: 0 40px;
   }
 }
 #skills .outer .inner,
@@ -618,34 +620,37 @@ html {
   color: #fff;
   font-weight: bolder;
 }
-#backToTop button:hover {
-  background-color: #fff;
-}
-#backToTop button:hover .bi::before {
-  color: #00796B;
-}
 
 #letsChat {
   position: fixed;
-  bottom: 65px;
-  width: 250px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
   right: -100%;
-  background-color: #00796B;
   opacity: 0;
   transition: 0.6s ease-in-out;
   z-index: 99;
-}
-@media (min-width: 768px) {
-  #letsChat {
-    width: 300px;
-  }
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: end;
+  align-items: end;
 }
 #letsChat.active {
   opacity: 1;
-  right: 15px;
+  right: 0px;
 }
 #letsChat .outer {
+  width: 250px;
+  background-color: #00796B;
   padding: 20px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+@media (min-width: 768px) {
+  #letsChat .outer {
+    width: 300px;
+  }
 }
 #letsChat .outer .close-btn {
   display: flex;

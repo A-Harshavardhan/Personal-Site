@@ -290,17 +290,17 @@ html {
 
             img {
                 margin: 0 auto;
-                width: 90%;
+                width: 100%;
                 height: 410px;
                 object-fit: fill;
 
                 @include media-up(sm) {
-                    width: 60%;
+                    width: 80%;
                     height: 490px;
                 }
 
                 @include media-up(md) {
-                    width: 80%;
+                    width: 100%;
                     height: 590px;
                 }
             }
@@ -409,7 +409,7 @@ html {
 
         .inner-1 {
             flex-basis: 100%;
-            padding: 40px;
+            padding: 40px 15px;
             opacity: 0;
             transform: translateX(-10px);
             transition: all .8s ease;
@@ -421,6 +421,7 @@ html {
 
             @include media-up(md) {
                 flex-basis: 60%;
+                padding: 40px;
             }
 
             h2 {
@@ -570,7 +571,7 @@ html {
 
     .outer {
         width: 100%;
-        padding: 0 40px;
+        padding: 0 10px;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -578,6 +579,7 @@ html {
 
         @include media-up(md) {
             row-gap: 0;
+            padding: 0 40px;
         }
 
         .inner {
@@ -666,42 +668,42 @@ html {
                 font-weight: bolder;
             }
         }
-
-        &:hover {
-            background-color: $white;
-
-            .bi {
-                &::before {
-                    color: #00796B;
-                }
-            }
-        }
     }
 }
 
 #letsChat {
     position: fixed;
-    bottom: 65px;
-    width: 250px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
     right: -100%;
     // box-shadow: 0 0 10px #00796B;
     // border: 1px solid #00796B;
-    background-color: #00796B;
     opacity: 0;
     transition: .6s ease-in-out;
     z-index: 99;
-
-    @include media-up(md) {
-        width: 300px;
-    }
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: end;
+    align-items: end;
 
     &.active {
         opacity: 1;
-        right: 15px;
+        right: 0px;
     }
 
     .outer {
+        width: 250px;
+        // box-shadow: 0 0 10px #00796B;
+        // border: 1px solid #00796B;
+        background-color: #00796B;
         padding: 20px;
+        margin-bottom: 20px;
+        margin-right: 20px;
+
+        @include media-up(md) {
+            width: 300px;
+        }
 
         .close-btn {
             display: flex;

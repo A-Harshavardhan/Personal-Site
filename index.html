@@ -211,6 +211,11 @@
             $('.navbar-toggler-icon').on('click', function () {
                 $('.nav-links').toggleClass('active');
             });
+            $('.navbar-toggler-icon').on('click', function () {
+                if (!$('.navigation-bar').hasClass('active')) {
+                    $('.navigation-bar').addClass('active');
+                }
+            });
             $('.nav-close-icon button').on('click', function () {
                 $('.nav-links').toggleClass('active');
             });
